@@ -1,0 +1,52 @@
+
+<div class="container h-100 " >
+  <div class="row " style="height:10% ;" >
+    <div class="col-10 d-flex align-items-center justify-content-center">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row " style="height:80% "  >
+    <div class="col-12 h-100 " style="overflow:auto !important;">
+      <table class="table table-bordered ">
+        <thead class="thead" >
+          <tr >
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Route</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of items | paginate : {itemsPerPage: filter.pageSize, currentPage: filter.page, totalItems: 100};">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td><a href="/">{{item.path}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row row-2 align-items-bottom justify-content-start " style="height:10% ">
+    <div class="col-8">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        [responsive]="true"
+        (pageChange)=" handlePageChange($event)" >
+      </pagination-controls>
+    </div>
+    <div class="col-4">
+      ... Items per Page:
+      <select #mySelect (change)="handlePageSizeChange(mySelect.value)">
+        <option *ngFor="let size of pageSizes" >
+          {{ size }}
+        </option>
+      </select>  
+    </div>
+  </div> 
+  
+</div>
+
+
+
+   
+   

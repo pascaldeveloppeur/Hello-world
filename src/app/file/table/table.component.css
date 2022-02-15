@@ -1,0 +1,30 @@
+.container{
+    width: 100%;
+   
+}
+select{
+    background-color: blueviolet;
+    border: 0px;
+}
+h1{
+    color:blueviolet;
+    text-align: center;
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.thead{
+    position: sticky;
+     top: 0; 
+     z-index: 1;
+     background:#eee;
+}
+
+.row-2{
+      position: relative;
+
+}
+.row1{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
